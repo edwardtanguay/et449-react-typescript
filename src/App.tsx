@@ -1,4 +1,6 @@
 import { BoxWrapper } from './components/BoxWrapper';
+import { DemoUseReducer } from './components/DemoUseReducer';
+import { ExampleUseState } from './components/ExampleUseState';
 import { Header } from './components/Header';
 import { NormalHeader } from './components/NormalHeader'
 import { VipHeader } from './components/VipHeader'
@@ -14,6 +16,12 @@ function App() {
 			<section className='p-4'>
 				<h2 className='text-3xl my-3'>The site information</h2>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam rem earum aliquam cupiditate quis, amet hic molestias et deleniti placeat beatae laborum saepe vel praesentium culpa aperiam in, sapiente neque.</p>
+				<BoxWrapper>
+					<DemoUseReducer/>
+				</BoxWrapper>
+				<BoxWrapper>
+					<ExampleUseState/>
+				</BoxWrapper>
 				<BoxWrapper>
 					<h2>Info Box</h2>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum non repudiandae, magnam veritatis, cum in quidem eaque quasi fuga reprehenderit nisi perspiciatis amet hic, distinctio sed maiores quos vitae consequuntur.</p>
