@@ -3,7 +3,7 @@ export const VipHeader = ({ fullName }: { fullName: string }) => {
 		<>
 			<h1>VIP Header</h1>
 			<p>Welcome, {fullName}</p>
-			<p>extra information</p>
+			<p>extra VIP information</p>
 		</>
 	)
 }
