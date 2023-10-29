@@ -1,40 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { Header } from './components/Header';
 import { NormalHeader } from './components/NormalHeader'
 import { VipHeader } from './components/VipHeader'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   const fullName = 'Georg Taylor';
   let customerKind = 'vip';
 
   return (
     <>
-      <div>
-        <Header component={customerKind === 'normal' ? <NormalHeader fullName={fullName} /> : <VipHeader fullName={fullName}/>} />
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header component={customerKind === 'normal' ? <NormalHeader fullName={fullName} /> : <VipHeader fullName={fullName} />} />
+      <section className='p-4'>
+        <h2 className='text-3xl my-3'>The site information</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam rem earum aliquam cupiditate quis, amet hic molestias et deleniti placeat beatae laborum saepe vel praesentium culpa aperiam in, sapiente neque.</p>
+      </section>
     </>
   )
 }
