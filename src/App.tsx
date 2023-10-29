@@ -4,9 +4,11 @@ import { ExampleUseState } from './components/ExampleUseState';
 import { Header } from './components/Header';
 import { NormalHeader } from './components/NormalHeader'
 import { VipHeader } from './components/VipHeader'
+import { useArray } from './hooks/useArray';
 
 function App() {
-	
+	const { array, push, remove, clear } = useArray([1, 2, 3]);
+
 	const fullName = 'Georg Taylor';
 	let customerKind = 'vip';
 
@@ -17,10 +19,16 @@ function App() {
 				<h2 className='text-3xl my-3'>The site information</h2>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam rem earum aliquam cupiditate quis, amet hic molestias et deleniti placeat beatae laborum saepe vel praesentium culpa aperiam in, sapiente neque.</p>
 				<BoxWrapper>
-					<DemoUseReducer/>
+					<div className='mb-3'>Array: {JSON.stringify(array)}</div>
+					<button className='mr-3' onClick={() => push(4)}>Add 4</button>
+					<button className='mr-3' onClick={() => remove(1)}>Remove element at index 1</button>
+					<button className='mr-3' onClick={clear}>Clear Array</button>
 				</BoxWrapper>
 				<BoxWrapper>
-					<ExampleUseState/>
+					<DemoUseReducer />
+				</BoxWrapper>
+				<BoxWrapper>
+					<ExampleUseState />
 				</BoxWrapper>
 				<BoxWrapper>
 					<h2>Info Box</h2>

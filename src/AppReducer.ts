@@ -4,9 +4,14 @@ interface IAppData {
 	version: number
 }
 
-interface IAction {
-	type: string,
-	payload: unknown
+interface IActionUpdateFullName {
+	type: 'updateFullName',
+	payload: string
+}
+
+interface IActionResetAllData {
+	type: 'resetAllData',
+	payload: IAppData
 }
 
 export const initialState: IAppData = {
@@ -15,18 +20,17 @@ export const initialState: IAppData = {
 	version: 1
 }
 
-export const AppReducer = (state: IAppData, action: IAction) => {
+export const AppReducer = (state: IAppData, action: IActionUpdateFullName | IActionResetAllData) => {
 	let newState = structuredClone(state);
-	let payload: string | IAppData;
 	switch (action.type) {
 		case 'updateFullName':
-			payload = action.payload as string;
-			newState.fullName = payload;
+			newState.fullName = action.payload;
 			break;
 		case 'resetAllData':
-			payload = action.payload as IAppData;
-			newState = structuredClone(payload);
+			newState = structuredClone(action.payload);
 			break;
 	}
 	return newState;
 }
+
+
