@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.boxWrapper {
+	h2 {
+		font-size: 1.5rem;
+
+		&::before {
+			content: '>>> ';
+		}
+
+		&::after {
+			content: ' <<<';
+		}
+	}
+
+	p {
+		line-height: 2rem;
+		color: rgb(105, 15, 15);
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		margin-top: .5rem;
+	}
+}
